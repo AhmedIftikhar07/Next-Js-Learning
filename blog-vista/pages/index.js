@@ -1,6 +1,6 @@
 import Head from 'next/head'
 // import Image from 'next/image'
-import { Inter } from 'next/font/google'
+// import { Inter } from 'next/font/google'
 import styles from '@/styles/Home.module.css'
 
 // const inter = Inter({ subsets: ['latin'] })
@@ -15,8 +15,10 @@ export default function Home() {
         <meta name="keywords" content="nextjx, blog vista, hunting coder"/>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <body className={styles.body}>
+      
         
+      <div className={styles.font}>
+
       
       {/* <Script src='' strategy='lazyOnLoad'></Script> */}
       <nav className={styles.mainNav}>
@@ -53,7 +55,7 @@ export default function Home() {
         </div>
         </div>
       </main>
-      </body>
+      </div>
     </>
   )
-}
+  }
