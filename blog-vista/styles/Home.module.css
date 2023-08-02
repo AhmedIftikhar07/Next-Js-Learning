@@ -242,4 +242,6 @@
   margin: 0 24px;
   list-style: none;
   font-weight: bold;
+  text-decoration: none;
+  color: black;
 }
