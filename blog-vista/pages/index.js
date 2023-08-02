@@ -1,9 +1,9 @@
 import Head from 'next/head'
-// import Image from 'next/image'
+import Image from 'next/image'
 // import { Inter } from 'next/font/google'
 import styles from '@/styles/Home.module.css'
-import Link from 'next/link'
-import Dummy from '@/components/Dummy'
+
+// import Dummy from '@/components/Dummy'
 
 // const inter = Inter({ subsets: ['latin'] })
 
@@ -12,8 +12,8 @@ export default function Home() {
     <>
     <style jsx>
       {`
-        .myspan{
-          color: red
+        h2{
+          font-size: 30px;
         }
       `}
     </style>
@@ -26,42 +26,30 @@ export default function Home() {
       </Head>
 
 
-      <div className={styles.font}>
-        <Dummy></Dummy>
+      <div>
+        {/* <Dummy></Dummy> */}
 
         {/* <Script src='' strategy='lazyOnLoad'></Script> */}
-        <nav className={styles.mainNav}>
-          <ul>
-            <Link href='/'>
-              <li>Home</li>
-            </Link>
-            <Link href='/about'>
-              <li>About</li>
-            </Link>
-            <Link href='/blog'>
-              <li>Blog</li>
-            </Link>
-            <Link href='/contact'>
-              <li>Contact</li>
-            </Link>
-
-          </ul>
-        </nav>
+        
 
         <main className={`${styles.main}`}>
 
 
           <div className={styles.main}>
-            <span className='myspan dummy'>
+            {/* <span className='myspan dummy'> */}
 
             <h1>Blog Vista</h1>
-            </span>
+
+            {/* </span> */}
+
+          <Image className={styles.myImg} src="/homeImg.jpg" width={237} height={158}/>
+
             <p>A blog for hunting coders by blog vista</p>
           </div>
 
 
           <div>
-            <h2>Popular Blogs</h2>
+            <h2>Latest Blogs</h2>
             <div className="blogItem">
               <h3>How to learn JavaScript in 2023?</h3>
               <p>JavaScript is the language used to design logics for the web</p>
