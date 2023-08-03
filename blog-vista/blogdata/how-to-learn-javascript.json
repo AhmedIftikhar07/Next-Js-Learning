@@ -1,6 +1,7 @@
 {
     "title": "How to Learn JavaScript",
     "description": "A guide to help beginners learn JavaScript step-by-step.",
+    "slug": "how-to-learn-javaScript",
     "chapters": [
       {
         "title": "Introduction to JavaScript",

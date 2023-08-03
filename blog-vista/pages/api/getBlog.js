@@ -6,6 +6,7 @@ export default function handler(req, res) {
   if(err){
     res.status(500).json({error: "some error occur"})
   }
+  console.log(req.query.slug);
    res.status(200).json(JSON.parse(data))
 })
 }

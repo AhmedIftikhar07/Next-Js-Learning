@@ -1,27 +1,31 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import styles from '../styles/blog.module.css'
 import Link from 'next/link'
 const blog = () => {
+
+  const [blogs, setBlogs] = useState([])
+
+  useEffect(() => {
+    fetch('http://localhost:3000/api/blogs').then((a) => {
+      return a.json()
+    })
+      .then((parsedData) => {
+        setBlogs(parsedData)
+      })
+  }, [])
   return (
     <div>
       <main className={`${styles.main}`}>
-      <div>
-            <div className="blogItem">
-              <Link href='/blogpost/learn-javascript'>
-              <h3>How to learn JavaScript in 2023?</h3>
-              </Link>
-              <p>JavaScript is the language used to design logics for the web</p>
-            </div>
-            <div className="blogItem">
-              <h3>How to learn JavaScript in 2023?</h3>
-              <p>JavaScript is the language used to design logics for the web</p>
-            </div>
-            <div className="blogItem">
-              <h3>How to learn JavaScript in 2023?</h3>
-              <p>JavaScript is the language used to design logics for the web</p>
-            </div>
+        {blogs.map((blogItem) => {
+          return <div key={blogItem.slug}>
+            <Link href={`/blogpost/${blogItem.slug}`}>
+              <h3>{blogItem.title}</h3>
+            </Link>
+            <p>{blogItem.description}</p>
           </div>
-          </main>
+        })}
+
+      </main>
     </div>
   )
 }
