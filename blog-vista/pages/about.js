@@ -35,7 +35,6 @@ const about = () => {
           
         </div>
       </main>
-      {/* Add any other sections or footer here if needed */}
     </div>
   );
 };

@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import Image from 'next/image'
+// import Image from 'next/image'
 // import { Inter } from 'next/font/google'
 import styles from '@/styles/Home.module.css'
 
@@ -42,8 +42,8 @@ export default function Home() {
 
             {/* </span> */}
 
-          <Image className={styles.myImg} src="/homeImg.jpg" width={237} height={158}/>
-
+          {/* <Image className={styles.myImg} src="/homeImg.jpg" width={237} height={158}/> */}
+          <img className={styles.myImg} src="/homeImg.jpg" width={237} height={158}/> 
             <p>A blog for hunting coders by blog vista</p>
           </div>
 
