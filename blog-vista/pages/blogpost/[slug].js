@@ -22,6 +22,7 @@ export async function getStaticPaths(){
       {params: {slug: 'how-to-learn-javaScript'}},
       {params: {slug: 'how-to-learn-nextjs'}},
       {params: {slug: 'how-to-learn-reactjs'}},
+      {params: {slug: 'how-to-learn-python'}},
     ],
     fallback: 'blocking'
   }
