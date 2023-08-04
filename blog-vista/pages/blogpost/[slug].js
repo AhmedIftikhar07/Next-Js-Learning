@@ -1,38 +1,41 @@
-import React, { useEffect,useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 import styles from '../../styles/blogPost.module.css'
 
 
-const Slug = () => {
-  
-  const [blog, setBlog] = useState([])
+export async function getServerSideProps(context) {
+  console.log(context.query);
+  const { slug } = context.query
+  let data = await fetch(`http://localhost:3000/api/getBlog?slug=${slug}`)
+  let myBlogs = await data.json()
 
-  const router = useRouter()
-    useEffect(()=>{
-    if(!router.isReady) return;
-    const {slug} = router.query;
-    
-      
-      fetch(`http://localhost:3000/api/getBlog?slug=${slug}`).then((a) => {
-      return a.json()
-      
-    })
-      .then((parsedData) => {
-        setBlog(parsedData)
-        console.log(parsedData);
-      })
-      
-    },[router.isReady])
-    
+  return {
+    props: { myBlogs }
+  }
+}
 
-    // Access the title and content of the first object in the "chapters" array
+const Slug = (props) => {
+  console.log(props);
+  const [blog, setBlog] = useState(props.myBlogs)
+  // useEffect(()=>{
+  // if(!router.isReady) return;
 
+  //   fetch(`http://localhost:3000/api/getBlog?slug=${slug}`).then((a) => {
+  //   return a.json()
+
+  // })
+  //   .then((parsedData) => {
+  //     setBlog(parsedData)
+  //     console.log(parsedData);
+  //   })
+
+  // },[router.isReady])
   return (
     <div>
       <header className={styles.header}>
         <h1>{blog && blog.title}</h1>
       </header>
-        
+
       <div>
         {blog.chapters &&
           blog.chapters.map((chapter, index) => (
@@ -41,10 +44,7 @@ const Slug = () => {
               <p>{chapter.content}</p>
             </div>
           ))}
-      </div> 
-        
-      
-      
+      </div>
     </div>
   );
 }
