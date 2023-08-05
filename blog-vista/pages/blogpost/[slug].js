@@ -34,6 +34,13 @@ const Slug = (props) => {
 
   return (
     <div>
+      <style jsx>
+      {`
+        *{
+          font-family: Arial, Helvetica, sans-serif;
+        }
+      `}
+    </style>
       <header className={styles.header}>
         <h1>{blog && blog.title}</h1>
       </header>

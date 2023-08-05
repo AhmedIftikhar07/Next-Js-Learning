@@ -3,7 +3,7 @@ import styles from '../styles/blog.module.css'
 import Link from 'next/link'
 import * as fs from 'fs'
 const blog = (props) => {
-  console.log(props);
+  
   const [blogs, setBlogs] = useState(props.allBlogs)
 
   // useEffect(() => {
@@ -11,6 +11,13 @@ const blog = (props) => {
   // }, [])
   return (
     <div>
+      <style jsx>
+      {`
+        *{
+          font-family: Arial, Helvetica, sans-serif;
+        }
+      `}
+    </style>
       <main className={`${styles.main}`}>
         {blogs.map((blogItem) => {
           return <div key={blogItem.slug}>

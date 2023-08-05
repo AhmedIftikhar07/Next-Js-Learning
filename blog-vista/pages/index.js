@@ -12,8 +12,8 @@ export default function Home() {
     <>
     <style jsx>
       {`
-        h2{
-          font-size: 30px;
+        *{
+          font-family: Arial, Helvetica, sans-serif;
         }
       `}
     </style>
@@ -26,24 +26,22 @@ export default function Home() {
       </Head>
 
 
-      <div>
+      <div className={styles.body}>
+      <img className={styles.myImg} src="/homeImg.jpg"/> 
         {/* <Dummy></Dummy> */}
 
         {/* <Script src='' strategy='lazyOnLoad'></Script> */}
         
 
-        <main className={`${styles.main}`}>
+        <main>
 
 
           <div className={styles.main}>
-            {/* <span className='myspan dummy'> */}
-
+            
             <h1>Blog Vista</h1>
 
-            {/* </span> */}
-
           {/* <Image className={styles.myImg} src="/homeImg.jpg" width={237} height={158}/> */}
-          <img className={styles.myImg} src="/homeImg.jpg" width={237} height={158}/> 
+          
             <p>A blog for hunting coders by blog vista</p>
           </div>
 

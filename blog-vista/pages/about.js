@@ -5,7 +5,15 @@ import styles from '../styles/about.module.css';
 
 const about = () => {
   return (
-
+    <>
+    <style jsx>
+      {`
+        *{
+          font-family: Arial, Helvetica, sans-serif;
+        }
+      `}
+    </style>
+    
     <div className={styles.container}>
       <Head>
         <title>About | Your Coder Blog</title>
@@ -36,6 +44,7 @@ const about = () => {
         </div>
       </main>
     </div>
+    </>
   );
 };
 
