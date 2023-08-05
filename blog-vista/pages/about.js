@@ -16,7 +16,7 @@ const about = () => {
     
     <div className={styles.container}>
       <Head>
-        <title>About | Your Coder Blog</title>
+        <title>About | Blog Vista</title>
       </Head>
       <header className={styles.header}>
         <h1>About Blog Vista</h1>

@@ -1,10 +1,51 @@
-.body{
-  width: 100vw;
-  height: 100vh;
-  position: fixed;
-  background-repeat: no-repeat;
-}
-.myImg{
-  width: 100%;
-  height: 100%;
-}
+.maincontainer {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image:linear-gradient(to bottom, rgb(37, 37, 37, 0.927), rgb(20, 21, 20)),url(../public/home2Img.jpg);
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    
+  }
+
+  .header {
+    text-align: center;
+    color: #fff;
+  }
+  .header p{
+    margin-top: 1rem;
+    font-size: 15px;
+    font-weight: 300;
+  }
+
+  .latestBlog {
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 20px;
+    opacity: 70%;
+  }
+
+  .blogItem {
+    border-bottom: 1px solid #000000;
+    padding: 10px 0;
+  }
+  .blogItem span{
+    font-size: 13px;
+  }
+  .latestBlog p{
+    margin-bottom: 2px;
+  }
+  @media(max-width:720px){
+    .latestBlog h2{
+      font-size: 20px;
+    }
+    .latestBlog h3{
+      font-size: 16px;
+    }
+    .latestBlog p{
+      font-size: 14px;
+    }
+  }

@@ -1,52 +1,50 @@
-import React, { useEffect, useState } from 'react'
-import styles from '../styles/blog.module.css'
-import Link from 'next/link'
-import * as fs from 'fs'
-const blog = (props) => {
-  
-  const [blogs, setBlogs] = useState(props.allBlogs)
 
-  // useEffect(() => {
-    
-  // }, [])
+import React, { useState } from 'react';
+import Link from 'next/link';
+import styles from '../styles/blog.module.css';
+import fs from 'fs/promises';
+import Head from 'next/head';
+
+
+const Blog = (props) => {
+     
+  const [blogs, setBlogs] = useState(props.allBlogs);
+
   return (
-    <div>
-      <style jsx>
-      {`
-        *{
-          font-family: Arial, Helvetica, sans-serif;
-        }
-      `}
-    </style>
+    <>
+    <Head>
+        <title>blogs | Blog Vista</title>
+      </Head>
+    <div className="container">
+    <div className={styles.background}>
       <main className={`${styles.main}`}>
-        {blogs.map((blogItem) => {
-          return <div key={blogItem.slug}>
+        {blogs.map((blogItem) => (
+          <div key={blogItem.slug} className={styles.blogItem}>
             <Link href={`/blogpost/${blogItem.slug}`}>
               <h3>{blogItem.title}</h3>
             </Link>
             <p>{blogItem.description}</p>
           </div>
-        })}
-
+        ))}
       </main>
     </div>
-  )
+    </div>
+    </>
+  );
+};
+
+export async function getStaticProps(context) {
+  const data = await fs.readdir('blogdata');
+  const allBlogs = [];
+
+  for (const item of data) {
+    const myFile = await fs.readFile(('blogdata/' + item), 'utf-8');
+    allBlogs.push(JSON.parse(myFile));
+  }
+
+  return {
+    props: { allBlogs },
+  };
 }
 
-
-
-export async function getStaticProps(context){
-  let data = await fs.promises.readdir("blogdata")
-  let myFile; 
-  let allBlogs = [];
-  for(let index = 0; index< data.length; index++){
-    const item = data[index];
-    myFile = await fs.promises.readFile(('blogdata/'+item), 'utf-8')
-    allBlogs.push(JSON.parse(myFile))
-  }
-  return{
-    props: {allBlogs}
-  }
-}
-
-export default blog
+export default Blog;

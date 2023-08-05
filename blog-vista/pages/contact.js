@@ -52,16 +52,10 @@ const contact = () => {
   }
   return (
     <>
-    <style jsx>
-      {`
-        *{
-          font-family: Arial, Helvetica, sans-serif;
-        }
-      `}
-    </style>
+   
     <div className={styles.contactContainer}>
       <Head>
-        <title>Contact Us</title>
+        <title>Contact | Blog Vista</title>
       </Head>
       <div className={styles.contactContent}>
         <h1>Contact Us</h1>

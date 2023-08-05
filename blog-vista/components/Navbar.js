@@ -15,13 +15,7 @@ const Navbar = () => {
     return (
       <nav className={styles.navbar}>
         <div className={styles.navContainer}>
-          
-          <div className={styles.burgerMenu} onClick={toggleMenu}>
-            <div className={`${styles.bar} ${showMenu ? styles.active : ''}`}></div>
-            <div className={`${styles.bar} ${showMenu ? styles.active : ''}`}></div>
-            <div className={`${styles.bar} ${showMenu ? styles.active : ''}`}></div>
-          </div>
-          <ul className={`${styles.navLinks} ${showMenu ? styles.show : ''}`}>
+          <ul className={`${styles.navLinks}`}>
             <li>
               <Link href="/">
                 Home
