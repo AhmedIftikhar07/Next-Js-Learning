@@ -4,6 +4,7 @@ import Link from 'next/link';
 import styles from '../styles/blog.module.css';
 import fs from 'fs/promises';
 import Head from 'next/head';
+import InfiniteScroll from 'react-infinite-scroll-component';
 
 
 const Blog = (props) => {
@@ -18,6 +19,9 @@ const Blog = (props) => {
     <div className="container">
     <div className={styles.background}>
       <main className={`${styles.main}`}>
+
+
+
         {blogs.map((blogItem) => (
           <div key={blogItem.slug} className={styles.blogItem}>
             <Link href={`/blogpost/${blogItem.slug}`}>

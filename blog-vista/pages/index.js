@@ -8,6 +8,7 @@ import Link from 'next/link';
 // const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
+  let heading = '<BlogVista/>'
   return (
     <>
     <div className={styles.maincontainer}>
@@ -22,7 +23,7 @@ export default function Home() {
     
       <main>
         <div className={styles.header}>
-          <h1>BLOG VISTA</h1>
+          <h1>{heading}</h1>
           <p>Blog Vista: Your Window to a World of Ideas and Inspiration</p>
         </div>
 
